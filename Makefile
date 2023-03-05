@@ -37,6 +37,12 @@ deploy-run:
 	@tox -e deploy-run
 .PHONY: deploy-run
 
+## Run Jupyterlab
+build:
+	@echo "+ $@"
+	@tox -e build
+.PHONY: build
+
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################
