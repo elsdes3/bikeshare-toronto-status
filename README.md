@@ -7,7 +7,7 @@
 ![prs-welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 
 ## [About](#about)
-Add text here.
+Query public API to get station status for the Bike Share Toronto network.
 
 ## [Project Organization](#project-organization)
 
