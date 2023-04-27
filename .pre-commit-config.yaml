@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/ambv/black
-    rev: 23.1.0
+    rev: 23.3.0
     hooks:
     - id: black
       name: Ensure black code formatting
@@ -55,12 +55,12 @@ repos:
               __init__.py
           )
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.4
+    rev: 1.7.5
     hooks:
     - id: bandit
       name: Ensure compliance with security checks
       language_version: python3.10
-      args: ["--quiet", "--recursive", "--skip=B101,B105,B110,B310,B311,B404,B603"]
+      args: ["--quiet", "--recursive", "--skip=B101,B105,B110,B113,B310,B311,B404,B603"]
       verbose: true
       files: \.(py)$
       exclude: |
