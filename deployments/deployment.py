@@ -55,5 +55,6 @@ if __name__ == "__main__":
         skip_upload=False,
         ignore_file=".prefectignore",
         version=deployment_vesion,
+        enforce_parameter_schema=True,
     )
     deployment.apply()

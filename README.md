@@ -9,6 +9,52 @@
 ## [About](#about)
 Query public API to get station status for the Bike Share Toronto network.
 
+## [Usage](#usage)
+The deployment workflow here follows the Prefect [`Deployment` API for Python](https://docs.prefect.io/api-ref/prefect/deployments/#prefect.deployments.Deployment.build_from_flow) using the [`.build_from_flow()` method](https://docs.prefect.io/latest/api-ref/prefect/deployments/deployments/#prefect.deployments.deployments.Deployment).
+
+### [Manual](#manual)
+1. Terminals 1 and 2
+   - configure Prefect Cloud
+     ```bash
+     prefect profile use cloud
+     ```
+   - change into the `deployments` folder
+     ```bash
+     cd deployments
+     ```
+2. (terminal 1) create deployment
+   ```bash
+   python3 deployment.py
+   ```
+3. (terminal 1) start agent
+   ```bash
+   prefect agent start -q <queue-name>
+   ```
+4. (terminal 2) run deployment
+   ```bash
+   prefect deployment run <deployment-name>
+   ```
+
+### [Using `tox` Environments](#using-tox-environments)
+1. (terminal 1) create deployment
+   ```bash
+   make docker-create
+   ```
+2. (terminal 1) start agent
+   ```bash
+   make agent
+   ```
+3. (terminal 2) run deployment
+   ```bash
+   make deploy-run
+   ```
+
+Using `.tox`, the following commands are run before executing any Prefect command
+```bash
+$ cd deployments
+$ prefect profile use cloud
+```
+
 ## [Project Organization](#project-organization)
 
     ├── .gitignore                    <- files and folders to be ignored by version control system

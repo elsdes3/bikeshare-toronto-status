@@ -68,6 +68,8 @@ def extract_station_status_data(url: str) -> pl.DataFrame:
 
 @task(
     name="extract-status-info",
+    retries=2,
+    retry_delay_seconds=5,
     description="Extract station status and info for specified systems",
     tags=["extract-status-info"],
     log_prints=True,
@@ -230,6 +232,7 @@ def load(
         aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
         aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
         region_name=os.getenv("AWS_REGION"),
+        profile_name="nonelevenx",
     )
     curr_timestamp = (
         datetime.now(pytz.timezone(tz))
