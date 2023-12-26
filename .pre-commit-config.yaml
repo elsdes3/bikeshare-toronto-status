@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/ambv/black
-    rev: 23.11.0
+    rev: 23.12.1
     hooks:
     - id: black
       name: Ensure black code formatting
@@ -20,7 +20,7 @@ repos:
       language_version: python3.10
       verbose: true
   - repo: https://github.com/timothycrosley/isort
-    rev: 5.12.0
+    rev: 5.13.2
     hooks:
     - id: isort
       name: Ensure python modules are sorted
@@ -55,7 +55,7 @@ repos:
               __init__.py
           )
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.5
+    rev: 1.7.6
     hooks:
     - id: bandit
       name: Ensure compliance with security checks
